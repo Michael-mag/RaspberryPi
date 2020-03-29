@@ -39,7 +39,7 @@ class BLINK:
        #make a dictionary of the pins to be used
        pins = {
           21 : {'name' : 'GPIO 21', 'state' : GPIO.LOW},
-          18 : {'name' : 'GPIO 24', 'state' : GPIO.LOW}}
+          18 : {'name' : 'GPIO 18', 'state' : GPIO.LOW}}
                 #make each pin stored in the dictionary initially LOW
        for pin in pins:
            GPIO.setup(pin, GPIO.OUT, initial = GPIO.LOW)
@@ -99,11 +99,11 @@ if __name__ == "__main__":
        Using my router, I have my Mac and my Pi connected on the same network
            so that I will be able to ssh it from my mac and connect to the
            pi webserver from any device that is also on my network
-       The IP address of the Pi is 192.168.0.102
+       The IP address of the Pi is 192.xxx.x.xxx
        To be able to access it from my Mac, I have to pass in the IP adress as the
            host argument in the api.app.run() below.
        Also the port number has to be specified as I blocked the default port
            for other reasons
    """
    api = BLINK()
-   api.app.run(host='192.168.0.102', port=8080, debug=True)
+   api.app.run(host='xxx.xxx.x.xxx', port=8080, debug=True)
